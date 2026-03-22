@@ -2,77 +2,57 @@
 
 # Easy Asset Package Tool
 
-A simple Unity Editor tool for building `.unitypackage` files from an EditorWindow GUI.
+> Build `.unitypackage` files with a simple GUI — no scripting required.
 
-Configure include/exclude paths, manage versions, and export packages with a single click.
+![Easy Asset Package Tool](docs/images/ScreenShot0.png)
 
-## Features
+## What is this?
 
-- GUI-based EditorWindow for intuitive package configuration
-- Include/exclude path management with add/remove controls
-- Wildcard pattern matching (`*.cs`, `**/*.cs`) for flexible exclusion rules
-- Version substitution using `{version}` placeholder in package names
-- Optional Unity dependency inclusion
-- Persistent settings via ScriptableObject
-- Real-time asset preview with excluded file statistics
-- One-click package export
-- Auto-initialization of settings on project load
+A Unity Editor extension that lets you create `.unitypackage` files through a visual interface. Just pick the folders you want to include, set your exclude patterns, and click **Build**.
 
-## Screenshots
+### Key Features
 
-<!-- Add screenshot files to docs/images/ and uncomment below -->
-<!-- ![EditorWindow](docs/images/editor-window.png) -->
+- **Visual package builder** — Configure everything from an EditorWindow
+- **Flexible filtering** — Exclude files with wildcard patterns like `**/*.cs` or `**/Tests/**`
+- **Version management** — Use `{version}` in your package name for automatic versioning
+- **Live preview** — See exactly which files will be included before building
+- **Persistent settings** — Your configuration is saved automatically as a ScriptableObject
 
 ## Requirements
 
 - Unity 2022.3 LTS or later
-- Editor only (Windows / macOS)
 
-## Installation
+## Getting Started
 
-### Via Unity Package Manager (recommended)
+### Install via Unity Package Manager (recommended)
 
-1. Open **Window > Package Manager** in Unity.
+1. In Unity, go to **Window > Package Manager**
 2. Click **+** > **Add package from git URL...**
-3. Enter:
+3. Paste:
    ```
    https://github.com/Yu-Rin-Chi2/EasyAssetPackageTool.git?path=Assets/EasyAssetPackageTool
    ```
 
-### Manual
+### Install manually
 
-1. Download or clone this repository:
+1. Clone this repository:
    ```
    git clone https://github.com/Yu-Rin-Chi2/EasyAssetPackageTool.git
    ```
-2. Copy the `Assets/EasyAssetPackageTool` folder into your Unity project's `Assets` directory.
-3. Unity will automatically compile the Editor scripts.
+2. Copy `Assets/EasyAssetPackageTool/` into your project's `Assets/` folder.
 
-## Usage
+### Build your first package
 
-1. Open the tool from the menu: **Tools > EasyAssetPackageTool**
-2. Configure the output path and package name.
-3. Add include paths (folders or files to package).
-4. Add exclude patterns to filter out unwanted files (supports wildcards).
-5. Enter a version string (replaces `{version}` in the package name).
-6. Click **Build** to export the `.unitypackage` file.
-
-## Configuration
-
-| Setting | Description |
-|---------|-------------|
-| Output Path | Directory for exported packages (default: `ExportPackage/`) |
-| Package Name | File name with optional `{version}` placeholder |
-| Include Dependencies | Toggle Unity dependency inclusion in the package |
-| Include Paths | List of directories/files to include |
-| Exclude Paths | Wildcard patterns to exclude (e.g., `**/*.meta`, `**/Tests/**`) |
-
-Settings are stored as a ScriptableObject at `Assets/EasyAssetPackageTool/EasyAssetPackageToolSettings.asset`.
+1. Open **Tools > EasyAssetPackageTool**
+2. Set an output directory and package name
+3. Add the folders/files you want to include
+4. (Optional) Add exclude patterns to filter out unwanted files
+5. Click **Build UnityPackage**
 
 ## Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+[MIT License](LICENSE)
