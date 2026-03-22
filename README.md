@@ -2,29 +2,27 @@
 
 # Easy Asset Package Tool
 
-> Build `.unitypackage` files with a simple GUI — no scripting required.
+> A GUI tool that makes building `.unitypackage` files simple and repeatable.
 
 ![Easy Asset Package Tool](docs/images/ScreenShot0.png)
 
-## What is this?
+## Who is this for?
 
-A Unity Editor extension that lets you create `.unitypackage` files through a visual interface. Just pick the folders you want to include, set your exclude patterns, and click **Build**.
+If you're creating and distributing Unity assets — on the **Unity Asset Store**, **Booth**, or anywhere else — you've probably run into these pain points:
 
-### Key Features
+- Your development project has test scenes, editor scripts, and other files that **shouldn't be in the final package**
+- The assets you want to package are **spread across multiple folders**
+- You have to **manually select files every time** you export a new version
 
-- **Visual package builder** — Configure everything from an EditorWindow
-- **Flexible filtering** — Exclude files with wildcard patterns like `**/*.cs` or `**/Tests/**`
-- **Version management** — Use `{version}` in your package name for automatic versioning
-- **Live preview** — See exactly which files will be included before building
-- **Persistent settings** — Your configuration is saved automatically as a ScriptableObject
+**Easy Asset Package Tool** solves all of these. Set up your include/exclude paths once, and build your package with a single click — every time.
 
 ## Requirements
 
 - Unity 2022.3 LTS or later
 
-## Getting Started
+## Installation
 
-### Install via Unity Package Manager (recommended)
+### Via Unity Package Manager (recommended)
 
 1. In Unity, go to **Window > Package Manager**
 2. Click **+** > **Add package from git URL...**
@@ -33,7 +31,7 @@ A Unity Editor extension that lets you create `.unitypackage` files through a vi
    https://github.com/Yu-Rin-Chi2/EasyAssetPackageTool.git?path=Assets/EasyAssetPackageTool
    ```
 
-### Install manually
+### Manual
 
 1. Clone this repository:
    ```
@@ -41,13 +39,55 @@ A Unity Editor extension that lets you create `.unitypackage` files through a vi
    ```
 2. Copy `Assets/EasyAssetPackageTool/` into your project's `Assets/` folder.
 
-### Build your first package
+## Usage
 
-1. Open **Tools > EasyAssetPackageTool**
-2. Set an output directory and package name
-3. Add the folders/files you want to include
-4. (Optional) Add exclude patterns to filter out unwanted files
-5. Click **Build UnityPackage**
+Open the tool from **Tools > EasyAssetPackageTool**.
+
+### 1. Basic Settings
+
+Configure your package output:
+
+| Setting | Description |
+|---------|-------------|
+| **Output Directory** | Where the `.unitypackage` file will be saved (default: `ExportPackage/`) |
+| **Package Name** | The file name. Use `{version}` as a placeholder — e.g. `MyAsset-v{version}` becomes `MyAsset-v1.2.0` |
+| **Version** | Appears when `{version}` is used in the package name |
+| **Include Dependencies** | When ON, Unity automatically includes dependent assets. When OFF, only the files you specify are included (recommended for precise control) |
+
+### 2. Asset Paths Configuration
+
+Define exactly what goes into your package:
+
+**Include Paths** — Add the folders or files to include. For example:
+  - `Assets/MyPlugin/Runtime`
+  - `Assets/MyPlugin/Editor`
+  - `Assets/MyPlugin/Resources/Icons`
+
+**Exclude Paths** — Filter out files you don't want. Supports wildcards:
+  - `**/Tests/**` — Exclude all test folders
+  - `**/*.asmdef` — Exclude assembly definitions
+  - `Assets/MyPlugin/Editor/Debug/` — Exclude a specific folder
+
+### 3. Build
+
+Click **Build UnityPackage** at the bottom. The tool shows a **live preview** of all files that will be included, so you can verify the contents before building.
+
+## Example
+
+A typical setup for an asset with runtime code, editor tools, and test files:
+
+```
+Include Paths:
+  Assets/MyPlugin/Runtime
+  Assets/MyPlugin/Editor
+  Assets/MyPlugin/Resources
+
+Exclude Paths:
+  **/Tests/**
+  **/*Debug*
+```
+
+This packages everything in Runtime, Editor, and Resources — while excluding any test folders and debug-related files.
 
 ## Contributing
 
