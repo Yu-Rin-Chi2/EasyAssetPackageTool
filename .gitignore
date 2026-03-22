@@ -1,0 +1,58 @@
+# ============================================
+# Unity
+# ============================================
+
+# Auto-generated folders
+Library/
+Temp/
+Obj/
+obj/
+Logs/
+Builds/
+MemoryCaptures/
+
+# User-specific settings
+UserSettings/
+
+# Auto-generated project files
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Crashlytics
+crashlytics-build.properties
+
+# Asset Store tools
+/Assets/AssetStoreTools*
+
+# ============================================
+# IDE
+# ============================================
+.vs/
+.idea/
+.vscode/
+
+# ============================================
+# OS
+# ============================================
+Thumbs.db
+.DS_Store
+
+# ============================================
+# Claude Code
+# ============================================
+.claude/
+CLAUDE.md
