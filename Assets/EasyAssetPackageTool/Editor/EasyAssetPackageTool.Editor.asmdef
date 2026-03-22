@@ -1,6 +1,6 @@
 {
-    "name": "EasyAssetPackageTool",
-    "rootNamespace": "EasyAssetPackageTool",
+    "name": "EasyAssetPackageTool.Editor",
+    "rootNamespace": "EasyAssetPackageTool.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"

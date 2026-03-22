@@ -1,0 +1,23 @@
+{
+    "name": "com.yu-rin-chi2.easy-asset-package-tool",
+    "version": "1.0.0",
+    "displayName": "Easy Asset Package Tool",
+    "description": "A simple Unity Editor tool for building .unitypackage files from an EditorWindow GUI.",
+    "unity": "2022.3",
+    "author": {
+        "name": "Yu-Rin-Chi2",
+        "url": "https://github.com/Yu-Rin-Chi2"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Yu-Rin-Chi2/EasyAssetPackageTool.git"
+    },
+    "keywords": [
+        "unitypackage",
+        "editor",
+        "build",
+        "export",
+        "package"
+    ]
+}

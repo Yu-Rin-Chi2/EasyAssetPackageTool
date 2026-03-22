@@ -1,3 +1,5 @@
+[日本語版はこちら / Japanese](README_JP.md)
+
 # Easy Asset Package Tool
 
 A simple Unity Editor tool for building `.unitypackage` files from an EditorWindow GUI.
@@ -18,7 +20,8 @@ Configure include/exclude paths, manage versions, and export packages with a sin
 
 ## Screenshots
 
-<!-- TODO: Add screenshots of the EditorWindow -->
+<!-- Add screenshot files to docs/images/ and uncomment below -->
+<!-- ![EditorWindow](docs/images/editor-window.png) -->
 
 ## Requirements
 
@@ -27,9 +30,20 @@ Configure include/exclude paths, manage versions, and export packages with a sin
 
 ## Installation
 
+### Via Unity Package Manager (recommended)
+
+1. Open **Window > Package Manager** in Unity.
+2. Click **+** > **Add package from git URL...**
+3. Enter:
+   ```
+   https://github.com/Yu-Rin-Chi2/EasyAssetPackageTool.git?path=Assets/EasyAssetPackageTool
+   ```
+
+### Manual
+
 1. Download or clone this repository:
    ```
-   git clone https://github.com/Yu-Rin-Chi2/EawsyAssetPackageTool.git
+   git clone https://github.com/Yu-Rin-Chi2/EasyAssetPackageTool.git
    ```
 2. Copy the `Assets/EasyAssetPackageTool` folder into your Unity project's `Assets` directory.
 3. Unity will automatically compile the Editor scripts.
@@ -53,7 +67,7 @@ Configure include/exclude paths, manage versions, and export packages with a sin
 | Include Paths | List of directories/files to include |
 | Exclude Paths | Wildcard patterns to exclude (e.g., `**/*.meta`, `**/Tests/**`) |
 
-Settings are stored as a ScriptableObject at `Assets/UnityPackageBuilder/UnityPackageBuilderSettings.asset`.
+Settings are stored as a ScriptableObject at `Assets/EasyAssetPackageTool/EasyAssetPackageToolSettings.asset`.
 
 ## Contributing
 
@@ -62,44 +76,3 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-# Easy Asset Package Tool (Japanese / 日本語)
-
-Unity Editor 上で `.unitypackage` ファイルを簡単にビルドできる EditorWindow ツールです。
-
-## 主な機能
-
-- GUI ベースの直感的なパッケージ設定
-- インクルード/除外パスの管理
-- ワイルドカードパターンによる柔軟な除外ルール
-- `{version}` プレースホルダによるバージョン置換
-- ワンクリックでパッケージをエクスポート
-- ScriptableObject による設定の永続化
-
-## 動作要件
-
-- Unity 2022.3 LTS 以降
-- Editor 専用（Windows / macOS）
-
-## インストール
-
-1. リポジトリをクローンまたはダウンロードします:
-   ```
-   git clone https://github.com/Yu-Rin-Chi2/EawsyAssetPackageTool.git
-   ```
-2. `Assets/EasyAssetPackageTool` フォルダを、お使いの Unity プロジェクトの `Assets` ディレクトリにコピーします。
-
-## 使い方
-
-1. メニューから **Tools > EasyAssetPackageTool** を開きます。
-2. 出力パスとパッケージ名を設定します。
-3. インクルードパス（パッケージに含めるフォルダ/ファイル）を追加します。
-4. 除外パターンで不要なファイルをフィルタリングします。
-5. バージョン文字列を入力します（パッケージ名の `{version}` が置換されます）。
-6. **Build** ボタンをクリックして `.unitypackage` をエクスポートします。
-
-## ライセンス
-
-MIT License - 詳細は [LICENSE](LICENSE) を参照してください。
