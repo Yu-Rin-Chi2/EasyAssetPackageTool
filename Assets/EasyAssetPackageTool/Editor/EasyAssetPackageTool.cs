@@ -85,6 +85,7 @@ namespace EasyAssetPackageTool.Editor
             }
 
             EditorGUILayout.HelpBox(
+                "Use {version} in Package Name to replace it with the Version field value.\n" +
                 "パッケージ名で {version} を使用すると、上のVersionフィールドの値で置換されます。",
                 MessageType.Info);
 
@@ -100,15 +101,15 @@ namespace EasyAssetPackageTool.Editor
             if (!settings.includeDependencies)
             {
                 EditorGUILayout.HelpBox(
-                    "依存関係を含めない場合、除外パターンに一致するファイルは確実に除外されます。" +
-                    "（DLL別途提供時に推奨）",
+                    "When disabled, files matching exclude patterns are guaranteed to be excluded. (Recommended when providing DLLs separately)\n" +
+                    "依存関係を含めない場合、除外パターンに一致するファイルは確実に除外されます。（DLL別途提供時に推奨）",
                     MessageType.Info);
             }
             else
             {
                 EditorGUILayout.HelpBox(
-                    "依存関係を含める場合、Unityが自動的に必要なアセットを追加します。" +
-                    "除外パターンは無視される可能性があります。",
+                    "When enabled, Unity automatically adds required assets. Exclude patterns may be ignored.\n" +
+                    "依存関係を含める場合、Unityが自動的に必要なアセットを追加します。除外パターンは無視される可能性があります。",
                     MessageType.Warning);
             }
 
@@ -422,7 +423,7 @@ namespace EasyAssetPackageTool.Editor
 
                 if (assetPaths.Count == 0)
                 {
-                    EditorUtility.DisplayDialog("Error", "パッケージに含めるアセットが見つかりません。", "OK");
+                    EditorUtility.DisplayDialog("Error", "No assets found to include in the package.\nパッケージに含めるアセットが見つかりません。", "OK");
                     return;
                 }
 
@@ -432,7 +433,7 @@ namespace EasyAssetPackageTool.Editor
                 {
                     if (string.IsNullOrEmpty(settings.lastInputVersion))
                     {
-                        EditorUtility.DisplayDialog("Error", "バージョンを入力してください。", "OK");
+                        EditorUtility.DisplayDialog("Error", "Please enter a version.\nバージョンを入力してください。", "OK");
                         return;
                     }
                     finalPackageName = settings.packageName.Replace("{version}", settings.lastInputVersion);
